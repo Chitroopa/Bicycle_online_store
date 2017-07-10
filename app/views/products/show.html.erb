@@ -1,2 +1,9 @@
 <h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+
+<h1><%= @product.name %></h1>
+<% if @product.images.any? %>
+  <% @product.images.each do |image| %>
+  <%= image_tag image.image.url(:medium) %>
+  <% end %>
+<% end %>
+<%= @product.description %>

@@ -7,4 +7,7 @@ Rails.application.routes.draw do
 
    resources :products
    resources :users
+   resources :orders do
+     resources :order_items
+   end
 end

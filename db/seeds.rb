@@ -9,7 +9,7 @@ Product.destroy_all
 Image.destroy_all
 10.times do |index|
   f = Product.create!(
-        name: Faker::Lorem.characters(10),
+        name: Faker::Hipster.sentence(1),
         price: Faker::Number.decimal(2),
         size: Faker::Number.number(2),
         speed: Faker::Number.number(2),

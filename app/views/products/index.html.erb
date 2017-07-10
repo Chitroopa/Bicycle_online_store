@@ -2,7 +2,7 @@
 <% if @products.any?() %>
   <div class="row">
     <% @products.each do |product|  %>
-      <div class="card col-md-4">
+      <div class="card col-md-3">
         <% if product.images.any? %>
           <%= image_tag product.images[0].image.url(:medium) %>
         <% else %>
@@ -11,8 +11,8 @@
           </p>
         <% end %>
         <div class="card-block">
-          <h4 class="card-title"><%= product.name %></h4>
-            <h2><%= product.name %></h2>
+          <h2 class="card-title"><%= link_to product.name, product_path(product) %></h2>
+            <h4><%= product.description %></h4>
             <p class="card-text">
                 $<%= product.price  %>
               </p>

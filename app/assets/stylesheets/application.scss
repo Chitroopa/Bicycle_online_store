@@ -16,3 +16,8 @@
  // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ .card {
+   border: 1px solid lightgray;
+   margin: 5px;
+ }

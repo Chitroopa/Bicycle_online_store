@@ -1,0 +1,41 @@
+<%= render "layouts/errors", :object => @product %>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <%= form_for [@product], url: url, html: { multipart: true } do |form| %>
+      <div class="control-group">
+        <%= form.label :images, class: 'control-label'  %>
+        <div class="controls">
+          <%= form.file_field :images, type: :file, multiple: true %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :name %>
+        <%= form.text_field :name, :class=>'form-control'%>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :price %>
+        <%= form.text_field :price, :class=>'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :size %>
+        <%= form.text_field :size, :class=>'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :speed %>
+        <%= form.number_field :speed, :class=>'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :description %>
+        <%= form.text_area :description, :class=>'form-control' %>
+      </div>
+
+      <%= form.submit %>
+    <% end %>
+  </div>
+</div>

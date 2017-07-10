@@ -5,3 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Product.destroy_all
+Image.destroy_all
+10.times do |index|
+  f = Product.create!(
+        name: Faker::Lorem.characters(10),
+        price: Faker::Number.decimal(2),
+        size: Faker::Number.number(2),
+        speed: Faker::Number.number(2),
+        description: Faker::StarWars.quote
+      )
+  2.times do |index|
+    i= Image.create!(
+      product_id: f.id,
+      :image => open("public/images/test.jpg")
+    )
+  end
+end
+
+p "Created #{Product.count} products"
+p "Created #{Image.count} image"

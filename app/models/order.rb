@@ -11,7 +11,7 @@ class Order < ApplicationRecord
   private
 
   def update_status
-    if self.status == nil?
+    if self.status == nil
       self.status = "In progress"
     end
   end

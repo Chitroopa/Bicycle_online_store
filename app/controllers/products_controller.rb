@@ -4,7 +4,9 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @order = current_order
     @product = Product.find(params[:id])
+    @order_items = current_order.order_items.new
   end
 
   def edit

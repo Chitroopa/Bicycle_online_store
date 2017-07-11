@@ -3,6 +3,8 @@ module ApplicationHelper
     current_user && current_user.admin
   end
 
+
+
   # def has_account
   #   if Account.where(user_id: current_user)
   #     Account.where(user_id: current_user)

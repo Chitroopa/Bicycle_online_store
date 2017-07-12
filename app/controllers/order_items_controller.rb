@@ -10,7 +10,10 @@ class OrderItemsController < ApplicationController
     @order.account_id = (Account.find_by(user_id: current_user.id)).id
     @order.save
     session[:order_id] = @order.id
-    redirect_to cart_path
+    respond_to do |format|
+      format.html { redirect_to cart_path}
+      format.js
+    end
   end
 
   def destroy

@@ -8,9 +8,11 @@
   <% end %>
 <% end %>
 <br>
+<h3>$<%= @product.price %> </h3>
+<br>
 <%= @product.description %>
 
-<%= form_for @order_items  do |f| %>
+<%= form_for @order_items, remote:true  do |f| %>
   <%= f.hidden_field :product_id, value: @product.id %>
   <%= f.number_field :quantity %>
   <%= f.submit "Add to cart" %>

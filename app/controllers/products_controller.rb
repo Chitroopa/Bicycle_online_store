@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+
   def index
     if current_order.status == "Paid"
       session[:order_id] = nil
@@ -10,6 +11,10 @@ class ProductsController < ApplicationController
     @order = current_order
     @product = Product.find(params[:id])
     @order_items = current_order.order_items.new
+    respond_to do |format|
+      format.html { render :show}
+      format.js
+    end
   end
 
   def edit

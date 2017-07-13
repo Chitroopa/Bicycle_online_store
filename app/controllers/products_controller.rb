@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
     if current_order.status == "Paid"
       session[:order_id] = nil
     end
-    @products = Product.all
+    @products = Product.paginate(:page => params[:page], :per_page => 6)
   end
 
   def show

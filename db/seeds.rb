@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Product.destroy_all
 Image.destroy_all
-10.times do |index|
+50.times do |index|
   f = Product.create!(
         name: Faker::GameOfThrones.dragon,
         price: Faker::Number.decimal(2),

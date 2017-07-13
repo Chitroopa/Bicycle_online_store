@@ -7,6 +7,10 @@ class ReviewsController < ApplicationController
   def new
     @product = Product.find(params[:product_id])
     @review = Review.new
+    respond_to do |format|
+      format.html { render :show}
+      format.js
+    end
   end
 
   def create
